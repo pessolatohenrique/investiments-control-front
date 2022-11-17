@@ -36,6 +36,7 @@ import { ExpenseTable } from "../expenses/ExpenseTable";
 import { ExpenseList } from "../expenses/ExpenseList";
 import { RecipeTable } from "../recipe/RecipeTable";
 import { GoalList } from "../goals/GoalList";
+import { InvestimentList } from "../investiments/InvestimentList";
 
 import {
   SNACKBAR_DIRECTION,
@@ -55,8 +56,8 @@ function DashboardContainer() {
   const [isTableGoal, isListGoal, switchFormatGoal] = useViewWrapper("list");
 
   // local states
-  const [budget, setBudget] = useState();
   const [goals, setGoals] = useState([]);
+  const [investiments, setInvestiments] = useState([]);
 
   async function getGoals() {
     try {
@@ -68,20 +69,19 @@ function DashboardContainer() {
     }
   }
 
-  // async function getBudget() {
-  //   try {
-  //     const response = await axios.get(`/user/Goal`);
-  //     setUserGoal(response.data);
-  //   } catch (error) {
-  //     showToast();
-  //     setError(error?.response?.data?.message || null);
-  //   }
-  // }
+  async function getInvestiments() {
+    try {
+      const response = await axios.get(`/investiment`);
+      setInvestiments(response?.data?.slice(0, 6));
+    } catch (error) {
+      showToast();
+      setError(error?.response?.data?.message || null);
+    }
+  }
 
   useEffect(() => {
     getGoals();
-    // getUserGoal();
-    // getBudget();
+    getInvestiments();
   }, []);
 
   return (
@@ -148,6 +148,33 @@ function DashboardContainer() {
                   }}
                 />
               )}
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        columnSpacing={3}
+        marginLeft={2}
+        marginRight={2}
+        marginTop={5}
+        marginBottom={3}
+        sx={{ width: "96%" }}
+      >
+        <Grid item lg={12} md={12} sm={12} xs={11}>
+          <Card>
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="h1"
+                color={THEME_COLOR}
+              >
+                Investimentos
+              </Typography>
+
+              <InvestimentList investiments={investiments} />
             </CardContent>
           </Card>
         </Grid>
