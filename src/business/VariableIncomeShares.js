@@ -1,6 +1,7 @@
+import moment from "moment";
 import { Typography, List, ListItem, ListItemText } from "@mui/material";
 
-class CheckingAccount {
+class VariableIncomeSHares {
   renderDetail(row) {
     return (
       <List variant="body2">
@@ -11,8 +12,20 @@ class CheckingAccount {
               {row.type}
             </Typography>
             <Typography variant="body2">
-              <strong>Valor líquido: </strong>
-              R$ {row.net_value}
+              <strong>Prazo estimado: </strong>
+              {moment(row?.final_date).format("DD/MM/YYYY")}
+            </Typography>
+            <Typography variant="body2">
+              <strong>Valor esperado: </strong>
+              R$ {row.expected_net_value}
+            </Typography>
+            <Typography variant="body2">
+              <strong>Valor investido: </strong>
+              R$ {row.invested_amount}
+            </Typography>
+            <Typography variant="body2">
+              <strong>Preço médio adquirido: </strong>
+              R$ {row.average_price}
             </Typography>
             <Typography variant="body2">
               <strong>Categoria: </strong>
@@ -29,4 +42,4 @@ class CheckingAccount {
   }
 }
 
-export default CheckingAccount;
+export default VariableIncomeSHares;
