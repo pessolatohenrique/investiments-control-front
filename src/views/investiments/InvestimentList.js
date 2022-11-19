@@ -20,7 +20,12 @@ export function InvestimentList({ investiments }) {
 
         return (
           <Grid item xs={4} key={row.id}>
-            <Card data-testid="card-item">
+            <Card
+              data-testid="card-item"
+              sx={{
+                borderLeft: `5px solid ${investimentCreated?.getIdentifyColor()}`,
+              }}
+            >
               <CardContent sx={{ minHeight: 265 }}>
                 <Typography variant="h6" component="div" color="text.secondary">
                   {row?.description}

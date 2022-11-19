@@ -40,6 +40,10 @@ class VariableIncomeSHares {
       </List>
     );
   }
+
+  getIdentifyColor() {
+    return "#ead1dc";
+  }
 }
 
 export default VariableIncomeSHares;

@@ -32,6 +32,10 @@ class VariableIncomeFunds {
       </List>
     );
   }
+
+  getIdentifyColor() {
+    return "#fff2cc";
+  }
 }
 
 export default VariableIncomeFunds;

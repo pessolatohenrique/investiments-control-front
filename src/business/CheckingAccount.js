@@ -27,6 +27,10 @@ class CheckingAccount {
       </List>
     );
   }
+
+  getIdentifyColor() {
+    return "#a4c2f4";
+  }
 }
 
 export default CheckingAccount;

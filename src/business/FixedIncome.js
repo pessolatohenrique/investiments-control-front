@@ -44,6 +44,10 @@ class FixedIncome {
       </List>
     );
   }
+
+  getIdentifyColor() {
+    return "#d9ead3";
+  }
 }
 
 export default FixedIncome;

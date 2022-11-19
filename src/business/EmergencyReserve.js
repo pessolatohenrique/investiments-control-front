@@ -48,6 +48,10 @@ class EmergencyReserve {
       </List>
     );
   }
+
+  getIdentifyColor() {
+    return "#d9d2e9";
+  }
 }
 
 export default EmergencyReserve;
