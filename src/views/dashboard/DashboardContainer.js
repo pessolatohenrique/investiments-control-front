@@ -60,10 +60,16 @@ function DashboardContainer() {
     isListStatisticType,
     switchStatisticType,
   ] = useViewWrapper("list");
+  const [
+    isTableStatisticYear,
+    isListStatisticYear,
+    switchStatisticYear,
+  ] = useViewWrapper("list");
 
   // local states
   const [goals, setGoals] = useState([]);
   const [statisticsByType, setStatisticsByType] = useState([]);
+  const [statisticsByYear, setStatisticsByYear] = useState([]);
   const [investiments, setInvestiments] = useState([]);
   const [investimentsRedeemed, setInvestimentsRedeemed] = useState([]);
 
@@ -81,6 +87,16 @@ function DashboardContainer() {
     try {
       const response = await axios.get(`/statistic/group?by=type`);
       setStatisticsByType(response?.data?.result);
+    } catch (error) {
+      showToast();
+      setError(error?.response?.data?.message || null);
+    }
+  }
+
+  async function getStatisticsByYear() {
+    try {
+      const response = await axios.get(`/statistic/group?by=final_date`);
+      setStatisticsByYear(response?.data?.result);
     } catch (error) {
       showToast();
       setError(error?.response?.data?.message || null);
@@ -107,6 +123,7 @@ function DashboardContainer() {
   useEffect(() => {
     getGoals();
     getStatisticsByType();
+    getStatisticsByYear();
     getInvestiments();
   }, []);
 
@@ -213,6 +230,58 @@ function DashboardContainer() {
               {isListStatisticType() && !process.env.JEST_WORKER_ID && (
                 <BarChartComparative
                   data={statisticsByType}
+                  labelProperty="dream_name"
+                  mainConfig={{
+                    legend: "Esperado (R$)",
+                    backgroundColor: "rgba(53, 162, 235, 0.5)",
+                    valueProperty: "sum_expected_net_value",
+                  }}
+                  secondConfig={{
+                    legend: "Investido (R$)",
+                    backgroundColor: "rgba(82, 178, 191, 0.5)",
+                    valueProperty: "sum_invested_amount",
+                  }}
+                />
+              )}
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        columnSpacing={3}
+        marginLeft={2}
+        marginRight={2}
+        marginTop={5}
+        marginBottom={3}
+        sx={{ width: "96%" }}
+      >
+        <Grid item lg={12} md={12} sm={12} xs={11}>
+          <Card>
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="h1"
+                color={THEME_COLOR}
+              >
+                Estatísticas - ano de resgate
+              </Typography>
+
+              <ViewListToggle
+                isTable={isTableStatisticYear}
+                isList={isListStatisticYear}
+                switchFormat={switchStatisticYear}
+              />
+
+              {isTableStatisticYear() && (
+                <StatisticTable result={statisticsByYear} />
+              )}
+
+              {isListStatisticYear() && !process.env.JEST_WORKER_ID && (
+                <BarChartComparative
+                  data={statisticsByYear}
                   labelProperty="dream_name"
                   mainConfig={{
                     legend: "Esperado (R$)",
