@@ -58,6 +58,7 @@ function DashboardContainer() {
   // local states
   const [goals, setGoals] = useState([]);
   const [investiments, setInvestiments] = useState([]);
+  const [investimentsRedeemed, setInvestimentsRedeemed] = useState([]);
 
   async function getGoals() {
     try {
@@ -72,7 +73,14 @@ function DashboardContainer() {
   async function getInvestiments() {
     try {
       const response = await axios.get(`/investiment`);
-      setInvestiments(response?.data?.slice(0, 6));
+      const investimentsResponse = response?.data.filter(
+        (item) => !item.has_redeemed
+      );
+      const investimentsRedeemedResponse = [...response?.data].filter(
+        (item) => item.has_redeemed
+      );
+      setInvestiments(investimentsResponse?.slice(0, 6));
+      setInvestimentsRedeemed(investimentsRedeemedResponse?.slice(0, 6));
     } catch (error) {
       showToast();
       setError(error?.response?.data?.message || null);
@@ -175,6 +183,33 @@ function DashboardContainer() {
               </Typography>
 
               <InvestimentList investiments={investiments} />
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        columnSpacing={3}
+        marginLeft={2}
+        marginRight={2}
+        marginTop={5}
+        marginBottom={3}
+        sx={{ width: "96%" }}
+      >
+        <Grid item lg={12} md={12} sm={12} xs={11}>
+          <Card>
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="h1"
+                color={THEME_COLOR}
+              >
+                Investimentos resgatados
+              </Typography>
+
+              <InvestimentList investiments={investimentsRedeemed} />
             </CardContent>
           </Card>
         </Grid>
