@@ -36,6 +36,7 @@ import { ExpenseTable } from "../expenses/ExpenseTable";
 import { ExpenseList } from "../expenses/ExpenseList";
 import { RecipeTable } from "../recipe/RecipeTable";
 import { GoalList } from "../goals/GoalList";
+import { StatisticTable } from "../statistics/StatisticTable";
 import { InvestimentList } from "../investiments/InvestimentList";
 
 import {
@@ -54,9 +55,15 @@ function DashboardContainer() {
   // custom hooks
   const { open, error, setError, showToast, hideToast } = useToast();
   const [isTableGoal, isListGoal, switchFormatGoal] = useViewWrapper("list");
+  const [
+    isTableStatisticType,
+    isListStatisticType,
+    switchStatisticType,
+  ] = useViewWrapper("list");
 
   // local states
   const [goals, setGoals] = useState([]);
+  const [statisticsByType, setStatisticsByType] = useState([]);
   const [investiments, setInvestiments] = useState([]);
   const [investimentsRedeemed, setInvestimentsRedeemed] = useState([]);
 
@@ -64,6 +71,16 @@ function DashboardContainer() {
     try {
       const response = await axios.get(`/goal`);
       setGoals(response.data);
+    } catch (error) {
+      showToast();
+      setError(error?.response?.data?.message || null);
+    }
+  }
+
+  async function getStatisticsByType() {
+    try {
+      const response = await axios.get(`/statistic/group?by=type`);
+      setStatisticsByType(response?.data?.result);
     } catch (error) {
       showToast();
       setError(error?.response?.data?.message || null);
@@ -89,6 +106,7 @@ function DashboardContainer() {
 
   useEffect(() => {
     getGoals();
+    getStatisticsByType();
     getInvestiments();
   }, []);
 
@@ -153,6 +171,58 @@ function DashboardContainer() {
                     legend: "Atual (%)",
                     backgroundColor: "rgba(82, 178, 191, 0.5)",
                     valueProperty: "actual_value_percentage",
+                  }}
+                />
+              )}
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        columnSpacing={3}
+        marginLeft={2}
+        marginRight={2}
+        marginTop={5}
+        marginBottom={3}
+        sx={{ width: "96%" }}
+      >
+        <Grid item lg={12} md={12} sm={12} xs={11}>
+          <Card>
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="h1"
+                color={THEME_COLOR}
+              >
+                Estatísticas - tipo de investimento
+              </Typography>
+
+              <ViewListToggle
+                isTable={isTableStatisticType}
+                isList={isListStatisticType}
+                switchFormat={switchStatisticType}
+              />
+
+              {isTableStatisticType() && (
+                <StatisticTable result={statisticsByType} />
+              )}
+
+              {isListStatisticType() && !process.env.JEST_WORKER_ID && (
+                <BarChartComparative
+                  data={statisticsByType}
+                  labelProperty="dream_name"
+                  mainConfig={{
+                    legend: "Esperado (R$)",
+                    backgroundColor: "rgba(53, 162, 235, 0.5)",
+                    valueProperty: "sum_expected_net_value",
+                  }}
+                  secondConfig={{
+                    legend: "Investido (R$)",
+                    backgroundColor: "rgba(82, 178, 191, 0.5)",
+                    valueProperty: "sum_invested_amount",
                   }}
                 />
               )}
