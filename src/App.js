@@ -8,6 +8,7 @@ import LoginForm from "./views/register/LoginForm";
 import RegisterContainer from "./views/register/RegisterContainer";
 import DashboardContainer from "./views/dashboard/DashboardContainer";
 import RecipeContainer from "./views/recipe/RecipeContainer";
+import InvestimentContainer from "./views/investiments/InvestimentContainer";
 import EarningForm from "./views/earnings/EarningForm";
 import ExpenseForm from "./views/expenses/ExpenseForm";
 
@@ -25,6 +26,10 @@ function App(props) {
       <Switch>
         <Route exact path="/">
           <DashboardContainer />
+        </Route>
+
+        <Route exact path="/investimentos">
+          <InvestimentContainer />
         </Route>
 
         <Route exact path="/receita/associar">
