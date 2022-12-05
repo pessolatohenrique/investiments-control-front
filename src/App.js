@@ -11,6 +11,7 @@ import RecipeContainer from "./views/recipe/RecipeContainer";
 import InvestimentContainer from "./views/investiments/InvestimentContainer";
 import EarningForm from "./views/earnings/EarningForm";
 import ExpenseForm from "./views/expenses/ExpenseForm";
+import InvestimentForm from "./views/investiments/InvestimentForm";
 
 function App(props) {
   const { token, setToken, setRefreshToken } = useToken();
@@ -30,6 +31,14 @@ function App(props) {
 
         <Route exact path="/investimentos">
           <InvestimentContainer />
+        </Route>
+
+        <Route exact path="/investimento/novo">
+          <InvestimentForm />
+        </Route>
+
+        <Route exact path="/investimento/:id">
+          <InvestimentForm />
         </Route>
 
         <Route exact path="/receita/associar">

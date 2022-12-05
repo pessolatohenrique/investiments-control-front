@@ -5,7 +5,6 @@ class InvestimentFactory {
   constructor() {}
   create = (type, resultFind = null) => {
     try {
-      console.log("created create!!!");
       const investiment = new InvestimentTypes[type](resultFind);
       return investiment;
     } catch (error) {
