@@ -14,8 +14,9 @@ export function formatCpfToString(valueToFormat) {
 export function formatMoneyToDecimal(strMoney) {
   let formatedValue = strMoney;
 
-  if (strMoney && strMoney.toString().includes("R$")) {
+  if (strMoney) {
     formatedValue = strMoney
+      .toString()
       .replace(/\./g, "")
       .replace(",", ".")
       .replace("R$", "")

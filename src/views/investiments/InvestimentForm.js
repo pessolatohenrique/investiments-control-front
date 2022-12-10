@@ -42,6 +42,11 @@ const RESET_FIELDS = {
   category: "",
   platform: "",
   net_value: "",
+  final_date: new Date(),
+  indexer: { name: "", contracted_rate: "" },
+  monthly_profitability: "",
+  invested_amount: "",
+  expected_net_value: "",
   type: "CHECKING_ACCOUNT",
 };
 
@@ -59,11 +64,13 @@ function InvestimentForm() {
 
   const watchType = watch("type");
 
+  console.log("watch type???", watchType);
+
   const [categories, setCategories] = useState([]);
   const { id } = useParams();
 
   const investimentModel = new InvestimentFactory();
-  const investimentCreated = investimentModel.create(watchType);
+  let investimentCreated = investimentModel.create(watchType);
 
   useEffect(() => {
     async function loadData() {
@@ -83,6 +90,8 @@ function InvestimentForm() {
     async function verifyUpdate() {
       if (id) {
         const data = await loadData();
+        const type = data?.type || "CHECKING_ACCOUNT";
+        investimentCreated = investimentModel.create(type);
         investimentCreated.loadFormData({ reset, data });
       }
     }
@@ -102,14 +111,14 @@ function InvestimentForm() {
   const verifyOperation = async (dataSubmit) => {
     if (id) {
       await axios.put(`/investiment/${id}`, {
-        type: "CHECKING_ACCOUNT",
+        type: watchType,
         ...dataSubmit,
       });
       return;
     }
 
     await axios.post(`/investiment`, {
-      type: "CHECKING_ACCOUNT",
+      type: watchType,
       ...dataSubmit,
     });
     reset(RESET_FIELDS);
@@ -123,6 +132,7 @@ function InvestimentForm() {
       showToast("success");
       setError("Investimento salvo com sucesso!");
     } catch (error) {
+      console.log("error!!!", error);
       showToast();
       setError(error?.response?.data);
     }
