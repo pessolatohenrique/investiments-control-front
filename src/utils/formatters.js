@@ -13,13 +13,17 @@ export function formatCpfToString(valueToFormat) {
 
 export function formatMoneyToDecimal(strMoney) {
   let formatedValue = strMoney;
+  const condition =
+    (strMoney && strMoney.toString().includes("R$")) ||
+    (strMoney && strMoney.toString().includes("%"));
 
-  if (strMoney) {
+  if (condition) {
     formatedValue = strMoney
       .toString()
       .replace(/\./g, "")
       .replace(",", ".")
       .replace("R$", "")
+      .replace("%", "")
       .trim();
   }
 

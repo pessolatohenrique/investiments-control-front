@@ -41,12 +41,13 @@ const RESET_FIELDS = {
   description: "",
   category: "",
   platform: "",
-  net_value: "",
-  final_date: new Date(),
+  // goalId: "",
+  net_value: 0,
+  final_date: "",
   indexer: { name: "", contracted_rate: "" },
-  monthly_profitability: "",
-  invested_amount: "",
-  expected_net_value: "",
+  monthly_profitability: 0,
+  invested_amount: 0,
+  expected_net_value: 0,
   type: "CHECKING_ACCOUNT",
 };
 
@@ -64,9 +65,7 @@ function InvestimentForm() {
 
   const watchType = watch("type");
 
-  console.log("watch type???", watchType);
-
-  const [categories, setCategories] = useState([]);
+  const [goals, setGoals] = useState([]);
   const { id } = useParams();
 
   const investimentModel = new InvestimentFactory();
@@ -80,14 +79,17 @@ function InvestimentForm() {
       } catch (error) {}
     }
 
-    async function loadCategories() {
+    async function loadGoals() {
       try {
-        const response = await axios.get(`/category`);
+        const response = await axios.get(`/goal`);
         return response?.data || [];
       } catch (error) {}
     }
 
     async function verifyUpdate() {
+      const goals = await loadGoals();
+      setGoals(goals);
+
       if (id) {
         const data = await loadData();
         const type = data?.type || "CHECKING_ACCOUNT";
@@ -121,6 +123,8 @@ function InvestimentForm() {
       type: watchType,
       ...dataSubmit,
     });
+
+    console.log("RESET...", RESET_FIELDS);
     reset(RESET_FIELDS);
   };
 
@@ -132,7 +136,6 @@ function InvestimentForm() {
       showToast("success");
       setError("Investimento salvo com sucesso!");
     } catch (error) {
-      console.log("error!!!", error);
       showToast();
       setError(error?.response?.data);
     }
@@ -226,6 +229,7 @@ function InvestimentForm() {
               errors,
               register,
               control,
+              goals,
             })}
           </CardContent>
         </Card>
