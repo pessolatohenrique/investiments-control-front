@@ -48,6 +48,7 @@ const RESET_FIELDS = {
   monthly_profitability: 0,
   invested_amount: 0,
   expected_net_value: 0,
+  average_dividents: 0,
   type: "CHECKING_ACCOUNT",
 };
 
