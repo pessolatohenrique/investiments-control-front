@@ -12,6 +12,11 @@ import {
   Box,
 } from "@mui/material";
 import { THEME_COLOR } from "../../constants/default_settings";
+import {
+  MODAL_CONFIRM_TITLE,
+  MODAL_CONFIRM_SUBTITLE,
+} from "../../constants/messages";
+import ModalWrapper from "../../components/ModalWrapper";
 import ViewListToggle from "../../components/ViewListToggle";
 import { BarChartComparative } from "../../components/ChartWrapper";
 import useView from "../../hooks/useView";
@@ -48,6 +53,10 @@ function DashboardContainer() {
   const [statisticsByYear, setStatisticsByYear] = useState([]);
   const [investiments, setInvestiments] = useState([]);
   const [investimentsRedeemed, setInvestimentsRedeemed] = useState([]);
+
+  // modal
+  const [showModalInvestiment, setShowModalInvestiment] = useState(false);
+  const [selectedIdInvestiment, setSelectedIdInvestiment] = useState("");
 
   async function getGoals() {
     try {
@@ -121,6 +130,24 @@ function DashboardContainer() {
           {error}
         </Alert>
       </Snackbar>
+
+      {showModalInvestiment && (
+        <ModalWrapper
+          isOpen={showModalInvestiment}
+          title={MODAL_CONFIRM_TITLE}
+          subtitle={MODAL_CONFIRM_SUBTITLE}
+          hasConfirmButton
+          handleClose={() => {
+            setSelectedIdInvestiment("");
+            setShowModalInvestiment(false);
+          }}
+          endpoint={{
+            method: "delete",
+            name: `/investiment/${selectedIdInvestiment}`,
+          }}
+          callbackMethod={() => getInvestiments()}
+        />
+      )}
 
       <Grid
         container
@@ -297,7 +324,11 @@ function DashboardContainer() {
                 Investimentos
               </Typography>
 
-              <InvestimentList investiments={investiments} />
+              <InvestimentList
+                investiments={investiments}
+                onShowModal={() => setShowModalInvestiment(true)}
+                onSetSelectedId={(id) => setSelectedIdInvestiment(id)}
+              />
             </CardContent>
             <CardActions>
               <Button size="small" href="/investimentos">
@@ -329,7 +360,11 @@ function DashboardContainer() {
                 Investimentos resgatados
               </Typography>
 
-              <InvestimentList investiments={investimentsRedeemed} />
+              <InvestimentList
+                investiments={investimentsRedeemed}
+                onShowModal={() => setShowModalInvestiment(true)}
+                onSetSelectedId={(id) => setSelectedIdInvestiment(id)}
+              />
             </CardContent>
           </Card>
         </Grid>

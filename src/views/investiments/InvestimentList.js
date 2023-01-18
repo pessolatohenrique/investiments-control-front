@@ -13,7 +13,11 @@ import {
 } from "@mui/material";
 import InvestimentFactory from "../../factories/InvestimentFactory";
 
-export function InvestimentList({ investiments }) {
+export function InvestimentList({
+  investiments,
+  onSetSelectedId,
+  onShowModal,
+}) {
   return (
     <Grid container spacing={2}>
       {[...investiments].map((row) => {
@@ -47,7 +51,15 @@ export function InvestimentList({ investiments }) {
                 >
                   Editar
                 </Button>
-                <Button size="small" variant="contained" fullWidth>
+                <Button
+                  size="small"
+                  variant="contained"
+                  fullWidth
+                  onClick={() => {
+                    onSetSelectedId(row?._id);
+                    onShowModal();
+                  }}
+                >
                   Excluir
                 </Button>
               </CardActions>
