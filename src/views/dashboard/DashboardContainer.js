@@ -3,7 +3,9 @@ import axios from "axios";
 import {
   Grid,
   Card,
+  CardActions,
   CardContent,
+  Button,
   Typography,
   Alert,
   Snackbar,
@@ -297,6 +299,11 @@ function DashboardContainer() {
 
               <InvestimentList investiments={investiments} />
             </CardContent>
+            <CardActions>
+              <Button size="small" href="/investimentos">
+                Visualizar todos
+              </Button>
+            </CardActions>
           </Card>
         </Grid>
       </Grid>

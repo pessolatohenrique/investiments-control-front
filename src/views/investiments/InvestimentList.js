@@ -4,8 +4,10 @@ import {
   Grid,
   Card,
   CardContent,
+  CardActions,
   Typography,
   List,
+  Button,
   ListItem,
   ListItemText,
 } from "@mui/material";
@@ -34,6 +36,21 @@ export function InvestimentList({ investiments }) {
                   {investimentCreated.renderDetail(row)}
                 </List>
               </CardContent>
+              <CardActions>
+                <Button
+                  size="small"
+                  variant="contained"
+                  fullWidth
+                  onClick={() =>
+                    window.location.replace(`/investimento/${row?._id}`)
+                  }
+                >
+                  Editar
+                </Button>
+                <Button size="small" variant="contained" fullWidth>
+                  Excluir
+                </Button>
+              </CardActions>
             </Card>
           </Grid>
         );
