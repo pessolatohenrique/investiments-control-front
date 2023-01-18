@@ -17,6 +17,10 @@ export function InvestimentList({
   investiments,
   onSetSelectedId,
   onShowModal,
+  onSetSelectedIdRedeemed,
+  onShowModalRedeemed,
+  onSetSelectedIdCancel,
+  onShowModalCancel,
 }) {
   return (
     <Grid container spacing={2}>
@@ -40,6 +44,39 @@ export function InvestimentList({
                   {investimentCreated.renderDetail(row)}
                 </List>
               </CardContent>
+
+              {!row?.has_redeemed && (
+                <CardActions>
+                  <Button
+                    size="small"
+                    variant="contained"
+                    fullWidth
+                    onClick={() => {
+                      onSetSelectedIdRedeemed(row?._id);
+                      onShowModalRedeemed();
+                    }}
+                  >
+                    Resgatar
+                  </Button>
+                </CardActions>
+              )}
+
+              {row?.has_redeemed && (
+                <CardActions>
+                  <Button
+                    size="small"
+                    variant="contained"
+                    fullWidth
+                    onClick={() => {
+                      onSetSelectedIdCancel(row?._id);
+                      onShowModalCancel();
+                    }}
+                  >
+                    Cancelar o resgate
+                  </Button>
+                </CardActions>
+              )}
+
               <CardActions>
                 <Button
                   size="small"

@@ -27,6 +27,8 @@ function ModalWrapper({
   subtitle,
   isOpen,
   hasConfirmButton,
+  confirmVariant = "error",
+  confirmMessage = "Deletar",
   handleClose,
   endpoint,
   callbackMethod,
@@ -97,11 +99,11 @@ function ModalWrapper({
               </Button>
 
               <Button
-                variant="contained"
-                color="error"
+                variant={"contained"}
+                color={confirmVariant}
                 onClick={() => executeEndpoint()}
               >
-                Deletar
+                {confirmMessage}
               </Button>
             </Grid>
           )}

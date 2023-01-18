@@ -6,3 +6,7 @@ export const MODAL_CONFIRM_TITLE = "Confirmação";
 export const MODAL_CONFIRM_SUBTITLE =
   "Você realmente deseja excluir este item?";
 export const DELETED_MESSAGE_SUCCESS = "O item foi excluído com sucesso!";
+export const MODAL_CONFIRM_SUBTITLE_REDEEMED =
+  "Você deseja efetuar o resgate desse investimento?";
+export const MODAL_CONFIRM_SUBTITLE_CANCEL =
+  "Você deseja efetuar o cancelamento de resgate desse investimento?";

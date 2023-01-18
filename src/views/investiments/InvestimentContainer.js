@@ -27,6 +27,8 @@ import {
 import {
   MODAL_CONFIRM_TITLE,
   MODAL_CONFIRM_SUBTITLE,
+  MODAL_CONFIRM_SUBTITLE_REDEEMED,
+  MODAL_CONFIRM_SUBTITLE_CANCEL,
 } from "../../constants/messages";
 
 import BreadcrumbsWrapper from "../../components/BreadcrumbsWrapper";
@@ -45,6 +47,23 @@ function InvestimentContainer() {
   // modal
   const [showModalInvestiment, setShowModalInvestiment] = useState(false);
   const [selectedIdInvestiment, setSelectedIdInvestiment] = useState("");
+  const [
+    showModalInvestimentRedeemed,
+    setShowModalInvestimentRedeemed,
+  ] = useState(false);
+
+  const [
+    selectedIdInvestimentRedeemed,
+    setSelectedIdInvestimentRedeemed,
+  ] = useState("");
+
+  const [showModalInvestimentCancel, setShowModalInvestimentCancel] = useState(
+    false
+  );
+  const [
+    selectedIdInvestimentCancel,
+    setSelectedIdInvestimentCancel,
+  ] = useState("");
 
   async function getInvestiments() {
     try {
@@ -106,6 +125,45 @@ function InvestimentContainer() {
           />
         )}
 
+        {showModalInvestimentRedeemed && (
+          <ModalWrapper
+            isOpen={showModalInvestimentRedeemed}
+            title={MODAL_CONFIRM_TITLE}
+            subtitle={MODAL_CONFIRM_SUBTITLE_REDEEMED}
+            hasConfirmButton
+            confirmVariant="success"
+            confirmMessage="Resgatar"
+            handleClose={() => {
+              setSelectedIdInvestimentRedeemed("");
+              setShowModalInvestimentRedeemed(false);
+            }}
+            endpoint={{
+              method: "put",
+              name: `/investiment/${selectedIdInvestimentRedeemed}/redeemed`,
+            }}
+            callbackMethod={() => getInvestiments()}
+          />
+        )}
+
+        {showModalInvestimentCancel && (
+          <ModalWrapper
+            isOpen={showModalInvestimentCancel}
+            title={MODAL_CONFIRM_TITLE}
+            subtitle={MODAL_CONFIRM_SUBTITLE_CANCEL}
+            hasConfirmButton
+            confirmMessage="Cancelar resgate"
+            handleClose={() => {
+              setSelectedIdInvestimentCancel("");
+              setShowModalInvestimentCancel(false);
+            }}
+            endpoint={{
+              method: "put",
+              name: `/investiment/${selectedIdInvestimentCancel}/cancel`,
+            }}
+            callbackMethod={() => getInvestiments()}
+          />
+        )}
+
         {/* <br /> */}
         <Grid
           container
@@ -136,6 +194,10 @@ function InvestimentContainer() {
                   investiments={investimentsRedeemed}
                   onShowModal={() => setShowModalInvestiment(true)}
                   onSetSelectedId={(id) => setSelectedIdInvestiment(id)}
+                  onShowModalCancel={() => setShowModalInvestimentCancel(true)}
+                  onSetSelectedIdCancel={(id) =>
+                    setSelectedIdInvestimentCancel(id)
+                  }
                 />
               </CardContent>
             </Card>
@@ -171,6 +233,12 @@ function InvestimentContainer() {
                   investiments={investiments}
                   onShowModal={() => setShowModalInvestiment(true)}
                   onSetSelectedId={(id) => setSelectedIdInvestiment(id)}
+                  onShowModalRedeemed={() =>
+                    setShowModalInvestimentRedeemed(true)
+                  }
+                  onSetSelectedIdRedeemed={(id) =>
+                    setSelectedIdInvestimentRedeemed(id)
+                  }
                 />
               </CardContent>
             </Card>
