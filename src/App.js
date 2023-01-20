@@ -12,6 +12,7 @@ import InvestimentContainer from "./views/investiments/InvestimentContainer";
 import EarningForm from "./views/earnings/EarningForm";
 import ExpenseForm from "./views/expenses/ExpenseForm";
 import InvestimentForm from "./views/investiments/InvestimentForm";
+import StatisticContainer from "./views/statistics/StatisticContainer";
 
 function App(props) {
   const { token, setToken, setRefreshToken } = useToken();
@@ -63,6 +64,10 @@ function App(props) {
 
         <Route exact path="/gasto/:id">
           <ExpenseForm />
+        </Route>
+
+        <Route exact path="/estatisticas">
+          <StatisticContainer />
         </Route>
 
         <Route path="*">
