@@ -6,357 +6,274 @@ exports[`Dashboard Container should generate snapshot 1`] = `
     class="MuiBox-root css-m4l5cg"
   >
     <div
-      class="MuiGrid-root MuiGrid-container css-f54vyo-MuiGrid-root"
+      class="MuiGrid-root MuiGrid-container css-13puk6r-MuiGrid-root"
     >
       <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-11 MuiGrid-grid-md-3 MuiGrid-grid-lg-3 css-6wc1s0-MuiGrid-root"
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-25posd-MuiGrid-root"
       >
         <div
-          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
         >
-          <label
-            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
-            data-shrink="true"
-            for="mui-1"
-            id="mui-1-label"
-          >
-            Selecione a data
-          </label>
           <div
-            class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
           >
-            <input
-              aria-invalid="false"
-              aria-label="Choose date, selected date is Nov 12, 2022"
-              aria-readonly="true"
-              class="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-              id="mui-1"
-              readonly=""
-              type="text"
-              value="11/2022"
+            <h1
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1y15g74-MuiTypography-root"
+            >
+              Metas
+            </h1>
+            <div
+              class="MuiGrid-root MuiGrid-container css-1mx4t5n-MuiGrid-root"
+            >
+              <button
+                class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                data-testid="view-table"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="ListIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+              <button
+                class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
+                data-testid="view-card"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="ViewModuleIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container css-13puk6r-MuiGrid-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-25posd-MuiGrid-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
+        >
+          <div
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <h1
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1y15g74-MuiTypography-root"
+            >
+              Estatísticas - tipo de investimento
+            </h1>
+            <div
+              class="MuiGrid-root MuiGrid-container css-1mx4t5n-MuiGrid-root"
+            >
+              <button
+                class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                data-testid="view-table"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="ListIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+              <button
+                class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
+                data-testid="view-card"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="ViewModuleIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            class="MuiCardActions-root MuiCardActions-spacing css-1t6e9jv-MuiCardActions-root"
+          >
+            <a
+              class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root  css-1knaqv7-MuiButtonBase-root-MuiButton-root"
+              href="/estatisticas"
+              tabindex="0"
+            >
+              Visualizar todos
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container css-13puk6r-MuiGrid-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-25posd-MuiGrid-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
+        >
+          <div
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <h1
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1y15g74-MuiTypography-root"
+            >
+              Estatísticas - ano de resgate
+            </h1>
+            <div
+              class="MuiGrid-root MuiGrid-container css-1mx4t5n-MuiGrid-root"
+            >
+              <button
+                class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                data-testid="view-table"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="ListIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+              <button
+                class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
+                data-testid="view-card"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="ViewModuleIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            class="MuiCardActions-root MuiCardActions-spacing css-1t6e9jv-MuiCardActions-root"
+          >
+            <a
+              class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root  css-1knaqv7-MuiButtonBase-root-MuiButton-root"
+              href="/estatisticas"
+              tabindex="0"
+            >
+              Visualizar todos
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container css-13puk6r-MuiGrid-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-25posd-MuiGrid-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
+        >
+          <div
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <h1
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1y15g74-MuiTypography-root"
+            >
+              Investimentos
+            </h1>
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
             />
-            <fieldset
-              aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-            >
-              <legend
-                class="css-1in441m"
-              >
-                <span>
-                  Selecione a data
-                </span>
-              </legend>
-            </fieldset>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="MuiGrid-root MuiGrid-container css-1o4tk1k-MuiGrid-root"
-    >
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-9 css-1bb61b6-MuiGrid-root"
-      >
-        <div
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiAlert-root MuiAlert-standardWarning MuiAlert-standard css-rob5aa-MuiPaper-root-MuiAlert-root"
-          role="alert"
-        >
-          <div
-            class="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-              data-testid="ReportProblemOutlinedIcon"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"
-              />
-            </svg>
-          </div>
-          <div
-            class="MuiAlert-message css-acap47-MuiAlert-message"
-          >
-            Para receber dicas personalizadas, associe uma "receita do sucesso"!
-          </div>
-          <div
-            class="MuiAlert-action css-ki1hdl-MuiAlert-action"
-          >
-            <a
-              class="MuiButton-root MuiButton-text MuiButton-textInherit MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-colorInherit MuiButtonBase-root  css-u44ztt-MuiButtonBase-root-MuiButton-root"
-              data-testid="associate-button"
-              href="/receita/associar"
-              tabindex="0"
-            >
-              <strong>
-                ASSOCIAR
-              </strong>
-              <span
-                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="MuiGrid-root MuiGrid-container css-16w72ce-MuiGrid-root"
-    >
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 MuiGrid-grid-lg-3 css-frzxno-MuiGrid-root"
-      >
-        <div
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
-          data-testid="indicator-card"
-        >
-          <img
-            alt="de ganhos"
-            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-6mo23z-MuiCardMedia-root"
-            height="140"
-            src="earnings.jpg"
-          />
-          <div
-            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
-          >
-            <div
-              class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
-            >
-              R$ undefined
-            </div>
-            <p
-              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
-            >
-              de ganhos
-            </p>
-          </div>
-        </div>
-      </div>
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 MuiGrid-grid-lg-3 css-frzxno-MuiGrid-root"
-      >
-        <div
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
-          data-testid="indicator-card"
-        >
-          <img
-            alt="de gastos"
-            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-6mo23z-MuiCardMedia-root"
-            height="140"
-            src="expenses.jpg"
-          />
-          <div
-            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
-          >
-            <div
-              class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
-            >
-              R$ undefined
-            </div>
-            <p
-              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
-            >
-              de gastos
-            </p>
-          </div>
-        </div>
-      </div>
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 MuiGrid-grid-lg-3 css-frzxno-MuiGrid-root"
-      >
-        <div
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
-          data-testid="indicator-card"
-        >
-          <img
-            alt="de gastos da receita de sucesso"
-            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-6mo23z-MuiCardMedia-root"
-            height="140"
-            src="indicators.png"
-          />
-          <div
-            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
-          >
-            <div
-              class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
-            >
-              undefined%
-            </div>
-            <p
-              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
-            >
-              de gastos da receita de sucesso
-            </p>
-          </div>
-        </div>
-      </div>
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-md-3 MuiGrid-grid-lg-3 css-6wc1s0-MuiGrid-root"
-      >
-        <div
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
-          data-testid="indicator-card"
-        >
-          <img
-            alt="um novo recurso para você"
-            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-6mo23z-MuiCardMedia-root"
-            height="140"
-            src="indicators.jpg"
-          />
-          <div
-            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
-          >
-            <div
-              class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
-            >
-              Em breve
-            </div>
-            <p
-              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
-            >
-              um novo recurso para você
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="MuiGrid-root MuiGrid-container css-18wszzq-MuiGrid-root"
-    >
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-25posd-MuiGrid-root"
-      >
-        <div
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
-        >
-          <div
-            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
-          >
-            <h1
-              class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1y15g74-MuiTypography-root"
-            >
-              Ganhos
-            </h1>
-            <div
-              class="MuiGrid-root MuiGrid-container css-1mx4t5n-MuiGrid-root"
-            >
-              <button
-                class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
-                data-testid="view-table"
-                tabindex="0"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="ListIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
-                  />
-                </svg>
-                <span
-                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                />
-              </button>
-              <button
-                class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                data-testid="view-card"
-                tabindex="0"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="ViewModuleIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"
-                  />
-                </svg>
-                <span
-                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-            <div
-              class="MuiTableContainer-root css-rorn0c-MuiTableContainer-root"
-            >
-              <table
-                class="MuiTable-root css-rqglhn-MuiTable-root"
-              >
-                <thead
-                  class="MuiTableHead-root css-15wwp11-MuiTableHead-root"
-                >
-                  <tr
-                    class="MuiTableRow-root MuiTableRow-head css-1q1u3t4-MuiTableRow-root"
-                  >
-                    <th
-                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-rih512-MuiTableCell-root"
-                      scope="col"
-                    >
-                      #
-                    </th>
-                    <th
-                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1w4f6gj-MuiTableCell-root"
-                      scope="col"
-                    >
-                      Descrição
-                    </th>
-                    <th
-                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1w4f6gj-MuiTableCell-root"
-                      scope="col"
-                    >
-                      Valor
-                    </th>
-                    <th
-                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1w4f6gj-MuiTableCell-root"
-                      scope="col"
-                    >
-                      Data
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  class="MuiTableBody-root css-apqrd9-MuiTableBody-root"
-                />
-              </table>
-            </div>
           </div>
           <div
             class="MuiCardActions-root MuiCardActions-spacing css-1t6e9jv-MuiCardActions-root"
           >
             <a
               class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root  css-1knaqv7-MuiButtonBase-root-MuiButton-root"
-              href="/ganho/novo"
+              href="/investimentos"
               tabindex="0"
             >
-              Adicionar
+              Visualizar todos
               <span
                 class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
               />
             </a>
-            <button
-              class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root  css-1knaqv7-MuiButtonBase-root-MuiButton-root"
-              tabindex="0"
-              type="button"
-            >
-              Exportar para excel
-              <span
-                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-              />
-            </button>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="MuiGrid-root MuiGrid-container css-16emugz-MuiGrid-root"
+      class="MuiGrid-root MuiGrid-container css-13puk6r-MuiGrid-root"
     >
       <div
         class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-25posd-MuiGrid-root"
@@ -370,194 +287,11 @@ exports[`Dashboard Container should generate snapshot 1`] = `
             <h1
               class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1y15g74-MuiTypography-root"
             >
-              Despesas
+              Investimentos resgatados
             </h1>
             <div
-              class="MuiGrid-root MuiGrid-container css-1mx4t5n-MuiGrid-root"
-            >
-              <button
-                class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
-                data-testid="view-table"
-                tabindex="0"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="ListIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
-                  />
-                </svg>
-                <span
-                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                />
-              </button>
-              <button
-                class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                data-testid="view-card"
-                tabindex="0"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="ViewModuleIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"
-                  />
-                </svg>
-                <span
-                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-            <div
-              class="MuiTableContainer-root css-rorn0c-MuiTableContainer-root"
-            >
-              <table
-                class="MuiTable-root css-rqglhn-MuiTable-root"
-              >
-                <thead
-                  class="MuiTableHead-root css-15wwp11-MuiTableHead-root"
-                >
-                  <tr
-                    class="MuiTableRow-root MuiTableRow-head css-1q1u3t4-MuiTableRow-root"
-                  >
-                    <th
-                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-rih512-MuiTableCell-root"
-                      scope="col"
-                    >
-                      #
-                    </th>
-                    <th
-                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1w4f6gj-MuiTableCell-root"
-                      scope="col"
-                    >
-                      Descrição
-                    </th>
-                    <th
-                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1w4f6gj-MuiTableCell-root"
-                      scope="col"
-                    >
-                      Categoria
-                    </th>
-                    <th
-                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1w4f6gj-MuiTableCell-root"
-                      scope="col"
-                    >
-                      Valor
-                    </th>
-                    <th
-                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1w4f6gj-MuiTableCell-root"
-                      scope="col"
-                    >
-                      Data
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  class="MuiTableBody-root css-apqrd9-MuiTableBody-root"
-                />
-              </table>
-            </div>
-          </div>
-          <div
-            class="MuiCardActions-root MuiCardActions-spacing css-1t6e9jv-MuiCardActions-root"
-          >
-            <a
-              class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root  css-1knaqv7-MuiButtonBase-root-MuiButton-root"
-              href="/gasto/novo"
-              tabindex="0"
-            >
-              Adicionar
-              <span
-                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-              />
-            </a>
-            <button
-              class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root  css-1knaqv7-MuiButtonBase-root-MuiButton-root"
-              tabindex="0"
-              type="button"
-            >
-              Exportar para excel
-              <span
-                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-              />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="MuiGrid-root MuiGrid-container css-16emugz-MuiGrid-root"
-    >
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-25posd-MuiGrid-root"
-      >
-        <div
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
-        >
-          <div
-            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
-          >
-            <h1
-              class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1y15g74-MuiTypography-root"
-            >
-              Receita do sucesso
-            </h1>
-            <div
-              class="MuiGrid-root MuiGrid-container css-1mx4t5n-MuiGrid-root"
-            >
-              <button
-                class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                data-testid="view-table"
-                tabindex="0"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="ListIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
-                  />
-                </svg>
-                <span
-                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                />
-              </button>
-              <button
-                class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
-                data-testid="view-card"
-                tabindex="0"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="ViewModuleIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"
-                  />
-                </svg>
-                <span
-                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                />
-              </button>
-            </div>
+              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+            />
           </div>
         </div>
       </div>

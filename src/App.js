@@ -7,10 +7,7 @@ import NotFound from "./components/NotFound";
 import LoginForm from "./views/register/LoginForm";
 import RegisterContainer from "./views/register/RegisterContainer";
 import DashboardContainer from "./views/dashboard/DashboardContainer";
-import RecipeContainer from "./views/recipe/RecipeContainer";
 import InvestimentContainer from "./views/investiments/InvestimentContainer";
-import EarningForm from "./views/earnings/EarningForm";
-import ExpenseForm from "./views/expenses/ExpenseForm";
 import InvestimentForm from "./views/investiments/InvestimentForm";
 import StatisticContainer from "./views/statistics/StatisticContainer";
 
@@ -42,28 +39,8 @@ function App(props) {
           <InvestimentForm />
         </Route>
 
-        <Route exact path="/receita/associar">
-          <RecipeContainer />
-        </Route>
-
         <Route exact path="/usuario/novo">
           <RegisterContainer />
-        </Route>
-
-        <Route exact path="/ganho/novo">
-          <EarningForm />
-        </Route>
-
-        <Route exact path="/ganho/:id">
-          <EarningForm />
-        </Route>
-
-        <Route exact path="/gasto/novo">
-          <ExpenseForm />
-        </Route>
-
-        <Route exact path="/gasto/:id">
-          <ExpenseForm />
         </Route>
 
         <Route exact path="/estatisticas">

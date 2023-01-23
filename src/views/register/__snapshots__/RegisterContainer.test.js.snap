@@ -57,55 +57,6 @@ exports[`Register Container should generate snapshot 1`] = `
               </span>
             </span>
           </div>
-          <div
-            class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled css-j5w0w9-MuiStepConnector-root"
-          >
-            <span
-              class="MuiStepConnector-line MuiStepConnector-lineHorizontal css-z7uhs0-MuiStepConnector-line"
-            />
-          </div>
-          <div
-            class="MuiStep-root MuiStep-horizontal css-1bw0nnu-MuiStep-root"
-            role="custom-step"
-          >
-            <span
-              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled css-ascpo7-MuiStepLabel-root"
-            >
-              <span
-                class="MuiStepLabel-iconContainer css-vnkopk-MuiStepLabel-iconContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="12"
-                  />
-                  <text
-                    class="MuiStepIcon-text css-117w1su-MuiStepIcon-text"
-                    text-anchor="middle"
-                    x="12"
-                    y="16"
-                  >
-                    2
-                  </text>
-                </svg>
-              </span>
-              <span
-                class="MuiStepLabel-labelContainer css-16ubnlw-MuiStepLabel-labelContainer"
-              >
-                <span
-                  class="MuiStepLabel-label Mui-disabled css-qivjh0-MuiStepLabel-label"
-                >
-                  Receita do Sucesso
-                </span>
-              </span>
-            </span>
-          </div>
         </div>
         <div
           class="MuiGrid-root css-vj1n65-MuiGrid-root"

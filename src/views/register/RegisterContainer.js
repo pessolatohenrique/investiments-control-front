@@ -14,7 +14,6 @@ import useToken from "../../hooks/useToken";
 import useToast from "../../hooks/useToast";
 import { SNACKBAR_DIRECTION } from "../../constants/default_settings";
 import moneyImage from "../../assets/moneyfinance-1.jpg";
-import RecipeChoose from "../recipe/RecipeChoose";
 import RegisterForm from "./RegisterForm";
 
 function RegisterContainer() {
@@ -27,19 +26,12 @@ function RegisterContainer() {
   // login
   const { setToken, setRefreshToken } = useToken();
 
-  const steps = ["Cadastro", "Receita do Sucesso"];
+  const steps = ["Cadastro"];
   const forms = [
     <>
       <RegisterForm
         onColectData={colectData}
         endpoint={{ method: "post", name: "user", generateToken: true }}
-      />
-    </>,
-    <>
-      <RecipeChoose
-        onColectData={colectData}
-        recipes={recipes}
-        endpoint={{ method: "put", name: "recipe/associate" }}
       />
     </>,
   ];
