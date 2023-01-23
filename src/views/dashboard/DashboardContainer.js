@@ -247,6 +247,11 @@ function DashboardContainer() {
                 />
               )}
             </CardContent>
+            <CardActions>
+              <Button size="small" href="/estatisticas">
+                Visualizar todos
+              </Button>
+            </CardActions>
           </Card>
         </Grid>
       </Grid>
@@ -299,6 +304,11 @@ function DashboardContainer() {
                 />
               )}
             </CardContent>
+            <CardActions>
+              <Button size="small" href="/estatisticas">
+                Visualizar todos
+              </Button>
+            </CardActions>
           </Card>
         </Grid>
       </Grid>

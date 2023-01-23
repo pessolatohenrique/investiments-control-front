@@ -29,9 +29,11 @@ export function StatisticTable({ result }) {
               return (
                 <TableRow key={row?.id} data-testid="row-table">
                   <TableCell>{row?.dream_name}</TableCell>
-                  <TableCell>{row?.sum_expected_net_value}</TableCell>
-                  <TableCell>{row?.sum_invested_amount}</TableCell>
-                  <TableCell>{row?.expected_profit}</TableCell>
+                  <TableCell>
+                    {row?.sum_expected_net_value?.toFixed(2)}
+                  </TableCell>
+                  <TableCell>{row?.sum_invested_amount?.toFixed(2)}</TableCell>
+                  <TableCell>{row?.expected_profit?.toFixed(2)}</TableCell>
                 </TableRow>
               );
             })}

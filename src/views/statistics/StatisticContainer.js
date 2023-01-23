@@ -258,7 +258,7 @@ function StatisticContainer() {
                 <StatisticTable result={statisticsByPlatform} />
               )}
 
-              {isListStatisticYear() && !process.env.JEST_WORKER_ID && (
+              {isListStatisticPlatform() && !process.env.JEST_WORKER_ID && (
                 <BarChartComparative
                   data={statisticsByPlatform}
                   labelProperty="dream_name"

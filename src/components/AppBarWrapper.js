@@ -15,7 +15,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import MenuIcon from "@material-ui/icons/Menu";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
-import MoneyOffIcon from "@material-ui/icons/MoneyOff";
+import BarChartIcon from "@material-ui/icons/BarChart";
 import { PROJECT_NAME } from "../constants/default_settings";
 import { isPageWithoutLogin } from "../utils/pages";
 
@@ -26,14 +26,19 @@ const items = [
     icon: <DashboardIcon />,
   },
   {
-    table: "novo ganho",
-    link: "ganho/novo",
+    table: "estatísticas",
+    link: "estatisticas",
+    icon: <BarChartIcon />,
+  },
+  {
+    table: "investimentos",
+    link: "investimentos",
     icon: <AttachMoneyIcon />,
   },
   {
-    table: "nova despesa",
-    link: "gasto/novo",
-    icon: <MoneyOffIcon />,
+    table: "novo investimento",
+    link: "investimento/novo",
+    icon: <AttachMoneyIcon />,
   },
 ];
 
