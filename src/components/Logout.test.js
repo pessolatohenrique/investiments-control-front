@@ -1,9 +1,23 @@
+import axios from "axios";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { PROJECT_NAME } from "../constants/default_settings";
 import App from "../App";
 
+jest.mock("axios");
+
+function mockCallValid() {
+  axios.post.mockResolvedValueOnce({
+    data: {
+      accessToken: "generated-value",
+      refreshToken: "generated-value",
+    },
+  });
+}
+
 describe("Logout", () => {
   beforeAll(async () => {
+    mockCallValid();
+
     render(<App />);
     const submitBtn = screen.getByTestId("submit-button");
     const username = screen.getByTestId("username");

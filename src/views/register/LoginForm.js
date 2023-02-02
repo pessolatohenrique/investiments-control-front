@@ -39,7 +39,7 @@ function LoginForm({ setToken, setRefreshToken }) {
       setRefreshToken(response.data.refreshToken);
     } catch (error) {
       showToast();
-      setError(error.response.data);
+      setError(error?.response?.data);
     }
   }
 

