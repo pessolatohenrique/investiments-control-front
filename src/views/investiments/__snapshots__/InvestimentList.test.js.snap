@@ -197,6 +197,15 @@ exports[`Goal List should generate snapshot 1`] = `
                     class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                   >
                     <strong>
+                      Lucro esperado: 
+                    </strong>
+                    R$ 
+                    2000.00
+                  </p>
+                  <p
+                    class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                  >
+                    <strong>
                       Categoria: 
                     </strong>
                     Tesouro Direto

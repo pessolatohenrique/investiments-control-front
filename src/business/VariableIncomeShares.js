@@ -50,6 +50,10 @@ class VariableIncomeSHares {
               R$ {row.invested_amount}
             </Typography>
             <Typography variant="body2">
+              <strong>Lucro esperado: </strong>
+              R$ {row?.expected_profit?.toFixed(2)}
+            </Typography>
+            <Typography variant="body2">
               <strong>Preço médio adquirido: </strong>
               R$ {row.average_price}
             </Typography>

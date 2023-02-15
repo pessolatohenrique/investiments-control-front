@@ -58,6 +58,10 @@ class FixedIncome {
               R$ {row.invested_amount}
             </Typography>
             <Typography variant="body2">
+              <strong>Lucro esperado: </strong>
+              R$ {row?.expected_profit?.toFixed(2)}
+            </Typography>
+            <Typography variant="body2">
               <strong>Categoria: </strong>
               {row.category}
             </Typography>

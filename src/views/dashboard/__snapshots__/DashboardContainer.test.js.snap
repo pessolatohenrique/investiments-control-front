@@ -20,7 +20,7 @@ exports[`Dashboard Container should generate snapshot 1`] = `
             <h1
               class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-1y15g74-MuiTypography-root"
             >
-              Metas
+              Metas - por porcentagem esperada
             </h1>
             <div
               class="MuiGrid-root MuiGrid-container css-1mx4t5n-MuiGrid-root"
