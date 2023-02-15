@@ -50,12 +50,18 @@ function StatisticContainer() {
     isListStatisticCategory,
     switchStatisticCategory,
   ] = useViewWrapper("list");
+  const [
+    isTableStatisticIndexer,
+    isListStatisticIndexer,
+    switchStatisticIndexer,
+  ] = useViewWrapper("list");
 
   // local states
   const [statisticsByType, setStatisticsByType] = useState([]);
   const [statisticsByYear, setStatisticsByYear] = useState([]);
   const [statisticsByPlatform, setStatisticsByPlatform] = useState([]);
   const [statisticsByCategory, setStatisticsByCategory] = useState([]);
+  const [statisticsByIndexer, setStatisticsByIndexer] = useState([]);
 
   async function getStatisticsByType() {
     try {
@@ -97,11 +103,22 @@ function StatisticContainer() {
     }
   }
 
+  async function getStatisticsByIndexer() {
+    try {
+      const response = await axios.get(`/statistic/group?by=indexer.name`);
+      setStatisticsByIndexer(response?.data?.result);
+    } catch (error) {
+      showToast();
+      setError(error?.response?.data?.message || null);
+    }
+  }
+
   useEffect(() => {
     getStatisticsByType();
     getStatisticsByYear();
     getStatisticsByPlatform();
     getStatisticsByCategory();
+    getStatisticsByIndexer();
   }, []);
 
   return (
@@ -313,6 +330,58 @@ function StatisticContainer() {
               {isListStatisticYear() && !process.env.JEST_WORKER_ID && (
                 <BarChartComparative
                   data={statisticsByCategory}
+                  labelProperty="dream_name"
+                  mainConfig={{
+                    legend: "Esperado (R$)",
+                    backgroundColor: "rgba(53, 162, 235, 0.5)",
+                    valueProperty: "sum_expected_net_value",
+                  }}
+                  secondConfig={{
+                    legend: "Investido (R$)",
+                    backgroundColor: "rgba(82, 178, 191, 0.5)",
+                    valueProperty: "sum_invested_amount",
+                  }}
+                />
+              )}
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        columnSpacing={3}
+        marginLeft={2}
+        marginRight={2}
+        marginTop={5}
+        marginBottom={3}
+        sx={{ width: "96%" }}
+      >
+        <Grid item lg={12} md={12} sm={12} xs={11}>
+          <Card>
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="h1"
+                color={THEME_COLOR}
+              >
+                Por indexador
+              </Typography>
+
+              <ViewListToggle
+                isTable={isTableStatisticIndexer}
+                isList={isListStatisticIndexer}
+                switchFormat={switchStatisticIndexer}
+              />
+
+              {isTableStatisticIndexer() && (
+                <StatisticTable result={statisticsByIndexer} />
+              )}
+
+              {isListStatisticYear() && !process.env.JEST_WORKER_ID && (
+                <BarChartComparative
+                  data={statisticsByIndexer}
                   labelProperty="dream_name"
                   mainConfig={{
                     legend: "Esperado (R$)",
