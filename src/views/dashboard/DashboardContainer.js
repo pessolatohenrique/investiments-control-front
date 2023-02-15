@@ -167,7 +167,7 @@ function DashboardContainer() {
                 component="h1"
                 color={THEME_COLOR}
               >
-                Metas
+                Metas - por porcentagem esperada
               </Typography>
 
               <ViewListToggle
