@@ -1,4 +1,4 @@
-import { orderByText, orderByListFloat } from "./orders";
+import { orderByText, orderByListFloat, orderByListDate } from "./orders";
 
 describe("Order helper", () => {
   it("should order by text", () => {
@@ -39,5 +39,39 @@ describe("Order helper", () => {
     const orderedList = orderByListFloat(list, "pages");
     expect(orderedList[0].name).toBe("Sherlock Homes");
     expect(orderedList[4].name).toBe("Harry Potter e a câmera secreta");
+  });
+
+  it("should order by date", () => {
+    const list = [
+      {
+        name: "Sherlock Homes",
+        category: "Suspense",
+        released_at: "1995-05-26",
+      },
+      {
+        name: "Morte no nilo",
+        category: "Suspense",
+        released_at: "2000-12-30",
+      },
+      {
+        name: "Harry Potter e a pedra filosofal",
+        category: "Fantasia",
+        released_at: "1998-04-01",
+      },
+      {
+        name: "Harry Potter e a câmera secreta",
+        category: "Fantasia",
+        released_at: "1999-09-29",
+      },
+      {
+        name: "Harry Potter e o prisioneiro de Azkaban",
+        category: "Fantasia",
+        released_at: "2001-08-25",
+      },
+    ];
+
+    const orderedList = orderByListDate(list, "pages");
+    expect(orderedList[0].name).toBe("Sherlock Homes");
+    expect(orderedList[4].name).toBe("Harry Potter e o prisioneiro de Azkaban");
   });
 });

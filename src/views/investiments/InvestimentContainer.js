@@ -36,6 +36,7 @@ import ModalWrapper from "../../components/ModalWrapper";
 
 import useToast from "../../hooks/useToast";
 import { InvestimentList } from "./InvestimentList";
+import { orderByListDate } from "../../utils/orders";
 
 function InvestimentContainer() {
   // custom hooks
@@ -43,6 +44,7 @@ function InvestimentContainer() {
 
   const [investiments, setInvestiments] = useState([]);
   const [investimentsRedeemed, setInvestimentsRedeemed] = useState([]);
+  const [investimentsByDate, setInvestimentsByDate] = useState([]);
 
   // modal
   const [showModalInvestiment, setShowModalInvestiment] = useState(false);
@@ -75,8 +77,15 @@ function InvestimentContainer() {
         (item) => item.has_redeemed
       );
 
+      const investimentsOrderDate = orderByListDate(
+        investimentsResponse,
+        "final_date",
+        "ASC"
+      ).filter((item) => !item.has_redeemed && item.final_date !== null);
+
       setInvestiments(investimentsResponse);
       setInvestimentsRedeemed(investimentsRedeemedResponse);
+      setInvestimentsByDate(investimentsOrderDate.slice(0, 9));
     } catch (error) {
       showToast();
       setError(error?.response?.data?.message || null);
@@ -163,6 +172,47 @@ function InvestimentContainer() {
             callbackMethod={() => getInvestiments()}
           />
         )}
+
+        <Grid
+          container
+          columnSpacing={3}
+          marginLeft={2}
+          marginRight={2}
+          marginTop={5}
+          marginBottom={3}
+          sx={{ width: "96%" }}
+        >
+          <Grid item lg={12} md={12} sm={12} xs={11}>
+            <Card>
+              <CardContent>
+                <BreadcrumbsWrapper
+                  parentLink={{ link: "/", label: "Dashboard" }}
+                  childrenLabel={"Investimentos"}
+                />
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h1"
+                  color={THEME_COLOR}
+                >
+                  Investimentos próximos do resgate
+                </Typography>
+
+                <InvestimentList
+                  investiments={investimentsByDate}
+                  onShowModal={() => setShowModalInvestiment(true)}
+                  onSetSelectedId={(id) => setSelectedIdInvestiment(id)}
+                  onShowModalRedeemed={() =>
+                    setShowModalInvestimentRedeemed(true)
+                  }
+                  onSetSelectedIdRedeemed={(id) =>
+                    setSelectedIdInvestimentRedeemed(id)
+                  }
+                />
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
 
         {/* <br /> */}
         <Grid
