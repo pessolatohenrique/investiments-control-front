@@ -6,7 +6,127 @@ exports[`Dashboard Container should generate snapshot 1`] = `
     class="MuiBox-root css-m4l5cg"
   >
     <div
-      class="MuiGrid-root MuiGrid-container css-13puk6r-MuiGrid-root"
+      class="MuiGrid-root MuiGrid-container css-v6ul0m-MuiGrid-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 MuiGrid-grid-lg-3 css-ucls3g-MuiGrid-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
+          data-testid="indicator-card"
+        >
+          <img
+            alt="de total investido"
+            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-6mo23z-MuiCardMedia-root"
+            height="140"
+            src="earnings.jpg"
+          />
+          <div
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <div
+              class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+            >
+              R$ 0.00
+            </div>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+            >
+              de total investido
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 MuiGrid-grid-lg-3 css-ucls3g-MuiGrid-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
+          data-testid="indicator-card"
+        >
+          <img
+            alt="da contagem de investimentos"
+            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-6mo23z-MuiCardMedia-root"
+            height="140"
+            src="indicators.png"
+          />
+          <div
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <div
+              class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+            >
+              0
+            </div>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+            >
+              da contagem de investimentos
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 MuiGrid-grid-lg-3 css-ucls3g-MuiGrid-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
+          data-testid="indicator-card"
+        >
+          <img
+            alt="de média de rentabilidade mensal"
+            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-6mo23z-MuiCardMedia-root"
+            height="140"
+            src="expenses.jpg"
+          />
+          <div
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <div
+              class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+            >
+              0.00
+            </div>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+            >
+              de média de rentabilidade mensal
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-md-3 MuiGrid-grid-lg-3 css-1rzy77c-MuiGrid-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
+          data-testid="indicator-card"
+        >
+          <img
+            alt="um novo recurso para você"
+            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-6mo23z-MuiCardMedia-root"
+            height="140"
+            src="indicators.jpg"
+          />
+          <div
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <div
+              class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+            >
+              Em breve
+            </div>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+            >
+              um novo recurso para você
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container css-1emisns-MuiGrid-root"
     >
       <div
         class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-25posd-MuiGrid-root"

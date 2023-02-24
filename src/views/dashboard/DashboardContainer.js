@@ -5,6 +5,7 @@ import {
   Card,
   CardActions,
   CardContent,
+  CardMedia,
   Button,
   Typography,
   Alert,
@@ -27,9 +28,36 @@ import { InvestimentList } from "../investiments/InvestimentList";
 import { SNACKBAR_DIRECTION } from "../../constants/default_settings";
 import useToast from "../../hooks/useToast";
 
+import earningImage from "../../assets/earnings.jpg";
+import expensesImage from "../../assets/expenses.jpg";
+import indicatorsImage from "../../assets/indicators.png";
+import indicatorsComingSoon from "../../assets/indicators.jpg";
+
 function useViewWrapper(initial = "table") {
   const [isTable, isList, switchFormat] = useView(initial);
   return [isTable, isList, switchFormat];
+}
+
+function IndicatorCard({ image, title, subtitle }) {
+  return (
+    <Card data-testid="indicator-card">
+      <CardMedia
+        component="img"
+        height="140"
+        image={image}
+        alt={subtitle}
+        sx={{ objectFit: "cover" }}
+      />
+      <CardContent>
+        <Typography variant="h5" component="div">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {subtitle}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
 }
 
 function DashboardContainer() {
@@ -48,6 +76,11 @@ function DashboardContainer() {
   ] = useViewWrapper("list");
 
   // local states
+  const [summarize, setSummarize] = useState({
+    average_month_profitability: 0,
+    invested_amount: 0,
+    count_investiments: 0,
+  });
   const [goals, setGoals] = useState([]);
   const [statisticsByType, setStatisticsByType] = useState([]);
   const [statisticsByYear, setStatisticsByYear] = useState([]);
@@ -57,6 +90,16 @@ function DashboardContainer() {
   // modal
   const [showModalInvestiment, setShowModalInvestiment] = useState(false);
   const [selectedIdInvestiment, setSelectedIdInvestiment] = useState("");
+
+  async function getSummarize() {
+    try {
+      const response = await axios.get(`/statistic/summary`);
+      setSummarize(response?.data);
+    } catch (error) {
+      showToast();
+      setError(error?.response?.data?.message || null);
+    }
+  }
 
   async function getGoals() {
     try {
@@ -106,6 +149,7 @@ function DashboardContainer() {
   }
 
   useEffect(() => {
+    getSummarize();
     getGoals();
     getStatisticsByType();
     getStatisticsByYear();
@@ -151,10 +195,52 @@ function DashboardContainer() {
 
       <Grid
         container
+        rowSpacing={{ xs: 3 }}
         columnSpacing={3}
         marginLeft={2}
         marginRight={2}
-        marginTop={5}
+        // marginBottom={2}
+        // marginTop={3}
+        sx={{ width: "96%" }}
+      >
+        <Grid item lg={3} md={3} sm={6} xs={11} marginTop={3}>
+          <IndicatorCard
+            image={earningImage}
+            title={`R$ ${summarize?.invested_amount?.toFixed(2)}`}
+            subtitle="de total investido"
+          />
+        </Grid>
+        <Grid item lg={3} md={3} sm={6} xs={11} marginTop={3}>
+          <IndicatorCard
+            image={indicatorsImage}
+            title={`${summarize?.count_investiments}`}
+            subtitle="da contagem de investimentos"
+          />
+        </Grid>
+        <Grid item lg={3} md={3} sm={6} xs={11} marginTop={3}>
+          <IndicatorCard
+            image={expensesImage}
+            // title={`R$ ${budget?.sum_expense?.toFixed(2)}`}
+            title={`${summarize?.average_month_profitability?.toFixed(2)}`}
+            subtitle="de média de rentabilidade mensal"
+          />
+        </Grid>
+
+        <Grid item lg={3} md={3} xs={11} marginTop={3}>
+          <IndicatorCard
+            image={indicatorsComingSoon}
+            title={`Em breve`}
+            subtitle="um novo recurso para você"
+          />
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        columnSpacing={3}
+        marginLeft={2}
+        marginRight={2}
+        marginTop={3}
         marginBottom={3}
         sx={{ width: "96%" }}
       >
